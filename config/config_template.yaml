@@ -1,0 +1,17 @@
+log:
+  stdout: true
+  level: info
+
+persistence:
+  defaultStore: cassandra-default
+  visibilityStore: cassandra-visibility
+  numHistoryShards: 1
+  datastores:
+    cassandra-default:
+      cassandra:
+        hosts: ["cassandra"]
+        keyspace: "temporal"
+    cassandra-visibility:
+      cassandra:
+        hosts: ["cassandra"]
+        keyspace: "temporal_visibility"
